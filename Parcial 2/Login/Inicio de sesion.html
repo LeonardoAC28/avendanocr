@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pagina de inicio de sesion</title>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<script type="text/javascript">
+
+var btn= document.getElementById('btn')
+	$(document).ready(function(){
+		
+		$("#btn").hide();
+		
+		$("#email").keyup(function(){
+			if(validateEmail()){
+				
+				$("#email").css("border","2px solid green");
+			
+				$("#emailMsg").html("<p class='text-success'>Validated</p>");
+			}else{
+			
+				$("#email").css("border","2px solid red");
+				$("#emailMsg").html("<p class='text-danger'>Un-validated</p>");
+			}
+			buttonState();
+		});
+		
+		$("#pass").keyup(function(){
+		
+			if(validatePassword()){
+			
+				$("#pass").css("border","2px solid green");
+			
+				$("#passMsg").html("<p class='text-success'>Password validated</p>");
+			}else{
+				
+				$("#pass").css("border","2px solid red");
+			
+				$("#passMsg").html("<p class='text-danger'>Password not valid</p>");
+			}
+			buttonState();
+		});
+	});
+
+	function buttonState(){	
+		if(validateEmail() && validatePassword()){
+			
+			$("#btn").show();
+		}else{
+			
+			$("#btn").hide();
+		}
+	}
+	function validateEmail(){
+		
+		var email=$("#email").val();
+	
+		 var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+		 if(reg.test(email)){
+		 	return true;
+		 }else{
+		 	return false;
+		 }
+
+	}
+	function validatePassword(){
+	
+		var pass=$("#pass").val();
+	
+		if(pass.length > 7){
+			return true;
+		}else{
+			return false;
+		}
+
+	}
+
+	btn.addEventListener('click',validarinicio,true)
+	function validarinicio()
+	{
+		if(validateEmail()== 'l16100172@nlaredo.tecnm.mx' && validatePassword() == '123456789')
+		{
+			alert('inicio de sesion exitoso');
+		}
+		else
+		{
+			alert('No se pudo iniciar sesion');
+		}
+			
+	}
+</script>
+<body class="bg-primary">
+
+<form class="form-container" onsubmit=" return validarinicio()">
+	<div class="row">
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4 border shadow-sm bg-light" style="margin-top:8%;padding:10px;">
+			<div class="form-group">
+				<label>ingresar correo:</label>
+				<input type="email" class="form-control" id="email" placeholder="Ingresar correo" autocomplete="off" name="">
+				<span id="emailMsg"></span>
+			</div>
+
+			<div class="form-group">
+				<label>ingresar password:</label>
+				<input type="password" class="form-control" id="pass" placeholder="Ingresar correo" autocomplete="off" name="">
+				<span id="passMsg"></span>
+			</div>
+
+			<div class="form-group">
+				<button class="btn btn-primary btn-block" id="btn">Iniciar sesion</button>
+			</div>
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+</form>
+</body>
+</html>
