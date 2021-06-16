@@ -1,0 +1,41 @@
+
+body
+{
+    background-image: url(../images/charles-deluvio-dClHqW-EfS8-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+#tablalista
+{
+    margin:150px auto;
+    width: 600px;
+}
+table
+{
+    width: 50%;
+    background-color: white;
+    text-align: left;
+    border-collapse: collapse;
+}
+tr, td, th
+    {
+        
+        padding: 15px;
+    }
+.listaids
+{
+    background-color: #246355;
+    border-bottom: solid 5px #0F362D ;
+    color: white;
+}
+tr:nth-child(even)
+{
+    background-color: #ddd ;
+}
+.listausuarios
+{
+    color: white;
+    background-color: rgb(70, 86, 129);
+}
