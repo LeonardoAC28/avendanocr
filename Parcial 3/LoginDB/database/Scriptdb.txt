@@ -1,0 +1,7 @@
+Create database avendanocr;
+use avendanocr;
+create table usuarios;
+INSERT INTO `usuarios`(`nombre_completo`, `correo`, `usuario`, `contrasena`) VALUES
+('leonardocruz','l16100172@nlaredo.tecnm.mx','leonardo','16100172'),
+('jonathan avendano','marck4_@hotmail.com','jonathan','123456789'),
+('leonardo,avendanocr@hotmail.com','leonardocruz','avendano');
