@@ -2,7 +2,7 @@ Create database avendanocr;
 use avendanocr;
 create table usuarios
 (
-	id int Auto_increment primary key,
+	id int not null Auto_increment primary key,
 	nombre_completo varchar(50);
 	correo varchar(30);
 	usuario varchar(20);
